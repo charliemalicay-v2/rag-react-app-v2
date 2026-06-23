@@ -4,7 +4,7 @@ import pytest
 
 
 def test_chroma_creates_collection_when_missing():
-    with patch("chromadb.HttpClient") as mock:
+    with patch("chromadb.CloudClient") as mock:
         client = MagicMock()
         client.get_collection = MagicMock(side_effect=ValueError("not found"))
         collection = MagicMock()
@@ -18,7 +18,7 @@ def test_chroma_creates_collection_when_missing():
 
 
 def test_chroma_uses_existing_collection():
-    with patch("chromadb.HttpClient") as mock:
+    with patch("chromadb.CloudClient") as mock:
         client = MagicMock()
         collection = MagicMock()
         client.get_collection = MagicMock(return_value=collection)
@@ -33,7 +33,7 @@ def test_chroma_uses_existing_collection():
 
 
 def test_chroma_add_documents():
-    with patch("chromadb.HttpClient") as mock:
+    with patch("chromadb.CloudClient") as mock:
         client = MagicMock()
         collection = MagicMock()
         collection.add = MagicMock()
@@ -48,7 +48,7 @@ def test_chroma_add_documents():
 
 
 def test_chroma_query():
-    with patch("chromadb.HttpClient") as mock:
+    with patch("chromadb.CloudClient") as mock:
         client = MagicMock()
         collection = MagicMock()
         collection.query = MagicMock(return_value={

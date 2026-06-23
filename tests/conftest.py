@@ -58,7 +58,7 @@ def mock_settings():
 
 @pytest.fixture(autouse=True)
 def mock_chromadb():
-    with patch("chromadb.HttpClient") as mock:
+    with patch("chromadb.CloudClient") as mock:
         client_instance = MagicMock()
         collection = MagicMock()
         collection.add = MagicMock()
