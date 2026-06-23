@@ -1,0 +1,36 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+uvicorn = "*"
+pydantic = "*"
+pydantic-settings = "*"
+redis = "*"
+langchain = "*"
+langchain-openai = "*"
+langchain-anthropic = "*"
+langchain-huggingface = "*"
+langchain-ollama = "*"
+langgraph = "*"
+openai = "*"
+chromadb = "*"
+tenacity = "*"
+python-dotenv = "*"
+boto3 = "*"
+pypdf = "*"
+python-docx = "*"
+openpyxl = "*"
+pillow = "*"
+pytesseract = "*"
+sentence-transformers = "*"
+
+[dev-packages]
+pytest = "*"
+pytest-asyncio = "*"
+pytest-mock = "*"
+
+[requires]
+python_version = "3.14"
