@@ -47,6 +47,8 @@ async def test_agent_streaming():
     async def mock_astream(*args, **kwargs):
         yield MagicMock(content="test"), {}
 
+    from src.ai_agent import agent as agent_module
+    agent_module.create_agent.return_value = agent._agent
     agent._agent.astream = mock_astream
 
     gen = agent.aexecute_stream("test query")
